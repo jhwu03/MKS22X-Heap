@@ -8,7 +8,7 @@ public class MyHeap{
        child1 = (index * 2) + 1;
        child2 = (index * 2) + 2;
        if(child1 > size || child2 > size )return;
-
+       if(child1 <= size && child2 <= size)
      }
 
      public static void heapify(int[])
