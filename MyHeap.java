@@ -5,6 +5,9 @@ public class MyHeap{
      // - precondition: index is between 0 and size-1 inclusive
      // - precondition: size is between 0 and data.length-1 inclusive.
      private static void pushDown(int[]data,int size,int index){
+       child1 = (index * 2) + 1;
+       child2 = (index * 2) + 2;
+       if()
 
      }
 
