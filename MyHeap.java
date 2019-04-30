@@ -7,7 +7,7 @@ public class MyHeap{
      private static void pushDown(int[]data,int size,int index){
        child1 = (index * 2) + 1;
        child2 = (index * 2) + 2;
-       if()
+       if(child1 > size || child2 > size )return;
 
      }
 
