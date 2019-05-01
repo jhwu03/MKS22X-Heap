@@ -67,8 +67,12 @@ private static void pushDown(int[]data,int size,int index){
  }
 
 
-     public static void heapify(int[])
+  public static void heapify(int[] data ){
     //- convert the array into a valid heap. [ should be O(n) ]
+    for (int i = data.length-1;i >= 0;i--) {
+      pushDown(data,data.length,i);
+    }
+  }
 
     public static void heapsort(int[])
     //- sort the array [ should be O(nlogn) ] :
