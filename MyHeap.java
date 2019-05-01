@@ -67,17 +67,27 @@ private static void pushDown(int[]data,int size,int index){
  }
 
 
-  public static void heapify(int[] data ){
+  public static void heapify(int[] data){
     //- convert the array into a valid heap. [ should be O(n) ]
     for (int i = data.length-1;i >= 0;i--) {
       pushDown(data,data.length,i);
     }
   }
 
-    public static void heapsort(int[])
+  public static void heapsort(int[] data){
     //- sort the array [ should be O(nlogn) ] :
     // converting it into a heap
     // removing the largest value n-1 times (remove places at end of the sub-array).
+    heapify(data);
+    int size = data.length - 1; 
+    for(int i = 0; i <= data.length - 2; i++){
+      int temp = data[0];
+      data[0] = data[size];
+      data[size] = temp;
+      pushDown(data, size, 0);
+      size--;
+    }
+  }
 
 
 
