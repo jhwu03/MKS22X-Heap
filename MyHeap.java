@@ -7,8 +7,8 @@ public class MyHeap{
 private static void pushDown(int[]data,int size,int index){
        boolean status = false;
        while(!status){
-       child1 = (index * 2) + 1;
-       child2 = (index * 2) + 2;
+       int child1 = (index * 2) + 1;
+       int child2 = (index * 2) + 2;
        if(child1 >= size && child2 >= size ) status = true;
        if(child1 < size && child2 < size){
          int max = 0;
@@ -35,7 +35,7 @@ private static void pushDown(int[]data,int size,int index){
            data[child1] = data[index];
            data[index] = max;
            index = child1;
-         }else status = done;
+         }else status = true;
        }
      }
    }
@@ -49,7 +49,7 @@ private static void pushDown(int[]data,int size,int index){
  private static void pushUp(int[]data, int index){
    boolean status = false;
    while(!status){
-     if(index == 0) done = true;
+     if(index == 0) status = true;
      else{
        int parent;
        if(index % 2 == 0) parent = (index / 2) - 1;
@@ -65,8 +65,6 @@ private static void pushDown(int[]data,int size,int index){
      }
    }
  }
-
-
   public static void heapify(int[] data){
     //- convert the array into a valid heap. [ should be O(n) ]
     for (int i = data.length-1;i >= 0;i--) {
@@ -79,7 +77,7 @@ private static void pushDown(int[]data,int size,int index){
     // converting it into a heap
     // removing the largest value n-1 times (remove places at end of the sub-array).
     heapify(data);
-    int size = data.length - 1; 
+    int size = data.length - 1;
     for(int i = 0; i <= data.length - 2; i++){
       int temp = data[0];
       data[0] = data[size];
@@ -88,8 +86,6 @@ private static void pushDown(int[]data,int size,int index){
       size--;
     }
   }
-
-
 
 
 
